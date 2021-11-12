@@ -4,6 +4,7 @@ entry point of the command interpreter """
 import cmd
 import json
 import sys
+import shlex
 from models.base_model import BaseModel
 from models.__init__ import storage
 list_classes = ['BaseModel']
@@ -63,6 +64,58 @@ class HBNBCommand(cmd.Cmd):
             for key, value in objs.items():
                 list_obj.append(value.__str__())
         print(list_obj)
+    
+    def do_destroy(self, argv):
+        objs = storage.all()
+        args = argv.split(" ")
+        if args[0]:
+            if args[0] in list_classes:
+                if args[1]:
+                    k = args[0] + "." + args[1]
+                    if k in objs.keys():
+                        for key in objs.keys():
+                            if k == key:
+                                objs.pop(k)
+                                storage.save()
+                                break
+                    else:
+                        print("** no instance found **")
+                else:
+                    print("** instance id missing **")
+            else:
+                print("** class doesn't exist **")
+        else:
+            print("** class name missing **")
+
+    def do_update(self, argv):
+        objs = storage.all()
+        args = shlex.split(argv)
+        if args[0]:
+            if args[0] in list_classes:
+                if args[1]:
+                    k = args[0] + "." + args[1]
+                    if k in objs.keys():
+                        if args[2]:
+                            if args[3]:
+                                for key, value in objs.items():
+                                    if k == key:
+                                        setattr(value, args[2], args[3])
+                                        print(value.to_dict())
+                                        storage.save()
+                                        break
+                            else:
+                                print("** value missing **")
+                        else:
+                            print("** attribute name missing **") 
+                    else:
+                        print("** no instance found **")
+                else:
+                    print("** instance id missing **")
+            else:
+                print("** class doesn't exist **")
+        else:
+            print("** class name missing **")
+
 
 
     def do_EOF(self, line):
