@@ -5,7 +5,8 @@ import cmd
 import json
 import sys
 from models.base_model import BaseModel
-
+from models.__init__ import storage
+list_classes = ['BaseModel']
 
 class HBNBCommand(cmd.Cmd):
 
@@ -14,16 +15,55 @@ class HBNBCommand(cmd.Cmd):
     def do_create(self, class_name):
         """ create [class_name]
         Creates a new instance of BaseModel """
-        list_classes = {'BaseModel': 'BaseModel'}
         if class_name:
-            if class_name == "BaseModel":
-                obj = BaseModel()
+            if class_name in list_classes:
+                obj = eval('{}()'.format(class_name))
+                obj.save()
                 print(obj.id)
-                print("exist")
             else:
                print("** class doesn't exist **")
         else:
             print("** class name missing **")
+
+    def do_show(self, argv):
+        objs = storage.all()
+        args = argv.split(" ")
+        if args[0]:
+            if args[0] in list_classes:
+                if args[1]:
+                    k = args[0] + "." + args[1]
+                    if k in objs.keys():
+                        for key, value in objs.items():
+                            if k == key:
+                                print(value.__str__())
+                    else:
+                        print("** no instance found **")
+                else:
+                    print("** instance id missing **")
+            else:
+                print("** class doesn't exist **")
+        else:
+            print("** class name missing **")
+    
+    """ def do_destroy(self, argv):
+        args = argv.split(" ")
+        if args[0]:
+            if args[0] == "BaseModel"
+                if args[1]:
+                    if id is args[0]:  """
+                        
+    def do_all(self, name):
+        objs = storage.all()
+        list_obj = []
+        if name in list_classes:
+            for key, value in objs.items():
+                if objs[key].__class__.__name__ == name:
+                    list_obj.append(value.__str__())   
+        else:
+            for key, value in objs.items():
+                list_obj.append(value.__str__())
+        print(list_obj)
+
 
     def do_EOF(self, line):
         """ EOF command to exit the program """
