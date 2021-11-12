@@ -5,6 +5,7 @@ from BaseModel
 """
 from base_model import BaseModel
 
-class Amenity (BaseModel):
-	"""public class attributes"""
+class City(BaseModel):
+    """public class attributes"""
+    state_id = None
     name = None

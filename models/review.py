@@ -5,6 +5,8 @@ from BaseModel
 """
 from base_model import BaseModel
 
-class Amenity (BaseModel):
+class Review(BaseModel):
 	"""public class attributes"""
-    name = None
+    place_id = None
+    user_id = None
+    text = None
