@@ -1,12 +1,13 @@
 #!/usr/bin/python3
-"""defines all common attributes/methods
-for other classes"""
+""" defines all common attributes/methods
+for other classes
+"""
 import uuid
 import datetime
-import models
 
 
 class BaseModel():
+    """ Class BaseModel """
 
     def __init__(self, *args, **kwargs):
         """ Constructor """
