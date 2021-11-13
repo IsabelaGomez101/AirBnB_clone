@@ -7,7 +7,13 @@ JSON file to instances.
 import json
 from os.path import os
 from models.base_model import BaseModel
-
+from models.user import User
+from models.amenity import Amenity
+from models.place import Place
+from models.city import City
+from models.review import Review
+from models.state import State
+list_classes = ['BaseModel', 'User', 'Amenity', 'Place', 'City', 'Review', 'State']
 
 class FileStorage():
     """Private class attributes"""
@@ -44,7 +50,8 @@ class FileStorage():
             with open(FileStorage.__file_path, 'r') as f:
                 my_dict = json.load(f)
                 for key, value in my_dict.items():
-                    self.__objects[key] = BaseModel(**value)
+                    nameclass = key.split(".")
+                    self.__objects[key] = eval('{}(**value)'.format(nameclass[0]))
         else: 
             pass
         
