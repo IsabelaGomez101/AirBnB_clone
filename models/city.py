@@ -3,9 +3,9 @@
 Class that inherit
 from BaseModel
 """
-from base_model import BaseModel
+from models.base_model import BaseModel
 
 class City(BaseModel):
     """public class attributes"""
-    state_id = None
-    name = None
+    state_id = ""
+    name = ""

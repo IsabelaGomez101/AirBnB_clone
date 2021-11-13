@@ -6,8 +6,14 @@ import json
 import sys
 import shlex
 from models.base_model import BaseModel
+from models.user import User
+from models.amenity import Amenity
+from models.place import Place
+from models.city import City
+from models.review import Review
+from models.state import State
 from models.__init__ import storage
-list_classes = ['BaseModel']
+list_classes = ['BaseModel', 'User', 'Amenity', 'Place', 'City', 'Review', 'State']
 
 class HBNBCommand(cmd.Cmd):
 
@@ -46,12 +52,6 @@ class HBNBCommand(cmd.Cmd):
         else:
             print("** class name missing **")
     
-    """ def do_destroy(self, argv):
-        args = argv.split(" ")
-        if args[0]:
-            if args[0] == "BaseModel"
-                if args[1]:
-                    if id is args[0]:  """
                         
     def do_all(self, name):
         objs = storage.all()

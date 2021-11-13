@@ -3,10 +3,10 @@
 Class that inherit
 from BaseModel
 """
-from base_model import BaseModel
+from models.base_model import BaseModel
 
 class Review(BaseModel):
-	"""public class attributes"""
-    place_id = None
-    user_id = None
-    text = None
+    """public class attributes"""
+    place_id = ""
+    user_id = ""
+    text = ""
