@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """
 Class FileStorage that serializes
-instances to a JSON file and deserializes 
+instances to a JSON file and deserializes
 JSON file to instances.
 """
 import json
@@ -13,7 +13,9 @@ from models.place import Place
 from models.city import City
 from models.review import Review
 from models.state import State
-list_classes = ['BaseModel', 'User', 'Amenity', 'Place', 'City', 'Review', 'State']
+list_classes = ['BaseModel', 'User', 'Amenity', 'Place',
+                'City', 'Review', 'State']
+
 
 class FileStorage():
     """Private class attributes"""
@@ -23,18 +25,18 @@ class FileStorage():
     def all(self):
         """Returns the dictionary __objects"""
         return FileStorage.__objects
-    
+
     def new(self, obj):
         """Sets in __objects the obj with key <obj class name>.id"""
         key = obj.__class__.__name__ + "." + obj.id
         FileStorage.__objects[key] = obj
-        
+
     def save(self):
         """Serializes __objects to the JSON file"""
         dic = {}
         if os.path.exists(FileStorage.__file_path):
             with open(FileStorage.__file_path, 'r') as f:
-               dic = json.load(f)
+                dic = json.load(f)
             for key, value in FileStorage.__objects.items():
                 dic[key] = value.to_dict()
         else:
@@ -50,8 +52,7 @@ class FileStorage():
             with open(FileStorage.__file_path, 'r') as f:
                 my_dict = json.load(f)
                 for key, value in my_dict.items():
-                    nameclass = key.split(".")
-                    self.__objects[key] = eval('{}(**value)'.format(nameclass[0]))
-        else: 
+                    namecl = key.split(".")
+                    self.__objects[key] = eval('{}(**value)'.format(namecl[0]))
+        else:
             pass
-        
