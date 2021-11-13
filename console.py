@@ -43,7 +43,7 @@ class HBNBCommand(cmd.Cmd):
         args = argv.split(" ")
         if args[0]:
             if args[0] in list_classes:
-                if args[1]:
+                if len(args) == 2:
                     k = args[0] + "." + args[1]
                     if k in objs.keys():
                         for key, value in objs.items():
@@ -81,7 +81,7 @@ class HBNBCommand(cmd.Cmd):
         args = argv.split(" ")
         if args[0]:
             if args[0] in list_classes:
-                if args[1]:
+                if len(args) == 2:
                     k = args[0] + "." + args[1]
                     if k in objs.keys():
                         for key in objs.keys():
@@ -105,13 +105,13 @@ class HBNBCommand(cmd.Cmd):
         Ex: $update BaseModel 12121212 email "aibnb@mail.com"."""
         objs = storage.all()
         args = shlex.split(argv)
-        if args[0]:
+        if len(args) >= 1:
             if args[0] in list_classes:
-                if args[1]:
+                if len(args) >= 2:
                     k = args[0] + "." + args[1]
                     if k in objs.keys():
-                        if args[2]:
-                            if args[3]:
+                        if len(args) >= 3:
+                            if len(args) == 4:
                                 for key, value in objs.items():
                                     if k == key:
                                         setattr(value, args[2], args[3])
