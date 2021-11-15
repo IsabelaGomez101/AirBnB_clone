@@ -3,8 +3,9 @@
 import unittest
 from models.base_model import BaseModel
 
-class TestBaseModel(unittest.TestCase):
 
+class TestBaseModel(unittest.TestCase):
+    """ test to verify that the methods"""
     def test_docstrings(self):
         self.assertIs(hasattr(BaseModel, "__init__"), True)
         self.assertIs(hasattr(BaseModel, "save"), True)
@@ -14,6 +15,7 @@ class TestBaseModel(unittest.TestCase):
         model1 = BaseModel()
         self.assertAlmostEqual(type(model1.id), str)
         self.assertAlmostEqual(len(model1.id), 36)
+
 
 if __name__ == "__main__":
     unittest.main()
