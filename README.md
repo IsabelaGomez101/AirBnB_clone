@@ -1,6 +1,6 @@
 # AirBnB clone - The console
 
-![proyecto hbnb](https://holbertonintranet.s3.amazonaws.com/uploads/medias/2018/6/65f4a1dd9c51265f49d0.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIARDDGGGOU5BHMTQX4%2F20211111%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20211111T204818Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=be7a5539edf138124cb3185cc110bc2983ba70ef0988ecd267e83bb04916824e)
+![holberton](https://user-images.githubusercontent.com/85319005/142083260-a32cf6da-977e-4a5c-90a9-e538b83c86d1.png)
 
 ## Table of Contents 🔍
 1. Description
@@ -19,7 +19,7 @@ With this project we intend to create our first complete web application: The Ai
 ### AirBnB clone - The console
 This is the first step: write a command interpreter to manage AirBnB objects.
 
-![proyecto hbnb the console](https://holbertonintranet.s3.amazonaws.com/uploads/medias/2018/6/815046647d23428a14ca.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIARDDGGGOU5BHMTQX4%2F20211113%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20211113T172113Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=ef92c42fb55320a2eea35eae6628ccd009a761073b37922a8984e631a87a7a7a)
+![hol](https://user-images.githubusercontent.com/85319005/142083508-dc298eaf-f751-443e-9ec2-36ba5e8da899.png)
 
 ## 2.Objectives 🌈
 * How to create a Python package
