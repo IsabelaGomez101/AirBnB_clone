@@ -1,0 +1,30 @@
+/*CSS document*/
+/*PLACES*/
+
+.places h1 {
+	font-size: 30px;
+	margin-bottom: 0px;
+}
+
+.places h2 {
+	font-size: 30px;
+	margin-bottom: 0px;
+	margin-top: -15px;
+}
+
+.places2 {
+	display:flex;
+	justify-content: center;
+	flex-wrap: wrap;
+}
+
+article {
+	width: 390px;
+    padding: 20px;
+	margin: 20px;
+	border: 1px solid;
+	border-radius: 4px;
+    border-color: #FF5A5F;
+	display:flex;
+	justify-content: center;
+}
