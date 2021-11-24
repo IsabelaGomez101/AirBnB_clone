@@ -10,7 +10,6 @@
 	border-radius: 4px;
 	display: flex;
 	align-items: center;
-	justify-content: right;
 }
 
 button {
@@ -33,12 +32,14 @@ button:hover {
 	width: 25%;
 	border-right: 1px solid;
 	border-right-color: #DDDDDD;
+	position:relative;
 }
 
 .amenities {
     height: 100%;
 	width: 25%;
 	border-right: 1px;
+	position:relative;
 }
 
 .filters div {
