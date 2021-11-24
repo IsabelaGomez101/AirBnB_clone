@@ -10,7 +10,6 @@
 	border-radius: 4px;
 	display: flex;
 	align-items: center;
-	justify-content: right;
 }
 
 button {
@@ -33,6 +32,7 @@ button:hover {
 	width: 25%;
 	border-right: 1px solid;
 	border-right-color: #DDDDDD;
+	position: relative;
 }
 
 div.locations:hover ul{
@@ -43,6 +43,7 @@ div.locations:hover ul{
     height: 100%;
 	width: 25%;
 	border-right: 1px;
+	position:relative;
 }
 
 div.amenities:hover ul{
@@ -58,9 +59,17 @@ div.amenities:hover ul{
 	border: 1px solid;
 	border-color: #DDDDDD;
 	border-radius: 4px;
-	width: 85%;
+	width: 100%;
 	padding-bottom: 30px;
 	display: none;
+	position:absolute;
+	top: 70px;
+	left: 0px;
+	margin-block-start: 0em;
+    margin-block-end: 0em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 0px;
 }
 
 
@@ -86,9 +95,14 @@ h2 {
 li {
 	list-style: none;
 	margin-top: 5px;
+	margin-left: 35px;
 }
 
 div.amenities ul{
 	padding-bottom: 30px;
 	padding-top: 30px;
+}
+
+li.li_item {
+	margin-left: 55px;
 }

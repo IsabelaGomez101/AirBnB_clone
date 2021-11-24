@@ -27,4 +27,5 @@ article {
     border-color: #FF5A5F;
 	display:flex;
 	justify-content: center;
+	flex-direction:column;
 }
